@@ -1,0 +1,51 @@
+{
+  "name": "webm-test",
+  "version": "1.0.0",
+  "description": "**Задание:** сверстать страницу листинга интернет-магазина, в которой нужно отрендерить датасет из файла **data.json**. Дизайн - произвольный, за основу можно взять пример в данном [макете](https://www.figma.com/file/GZDWwVSeu1N8KHRH7B0may/Test_task_sketch?node-id=0%3A1). Фотографии к карточкам товаров из датасета лежат в папке **src/images** данного репозитория. По готовности отправить мне в [телеграм](https://t.me/AleksDrozdov) 2 ссылки: на репозиторий с исходным кодом проекта и на сверстанную страницу, задеплоенную на любой бесплатный хостинг (Github Pages, Zeit Now, Netlify, Heroku и др.).",
+  "main": "webpack.config.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack --mode development",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "watch": "cross-env NODE_ENV=development webpack --mode development --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KseniyaShukevich/webm-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KseniyaShukevich/webm-test/issues"
+  },
+  "homepage": "https://github.com/KseniyaShukevich/webm-test#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.3.2",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.0.1",
+    "eslint": "^7.12.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.5.0",
+    "mini-css-extract-plugin": "^1.2.1",
+    "node-sass": "^5.0.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "sass-loader": "^10.1.0",
+    "terser-webpack-plugin": "^5.0.3",
+    "webpack": "^5.37.0",
+    "webpack-cli": "^4.7.0"
+  },
+  "dependencies": {
+    "bulma": "^0.9.2",
+    "pug": "^3.0.2",
+    "pug-loader": "^2.4.0"
+  }
+}
