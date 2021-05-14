@@ -1,0 +1,30 @@
+mixin item-stock(item)
+  a(class="box item-stock", href=`${item.href}`)
+    img(src=`./${item.image}`, alt="Placeholder image", class="item-stock-img")
+    div(class="content item-stock-content")
+      div(class="flex-space-between")
+        h4(class="title") #{item.title}
+        span(class="item-stock-price") #{item.price_currency} #{item.price}
+      div(class="item-stock-wrapper-content")
+        div
+          b Make:
+          |   #{item.make}
+        div
+          b Model:
+          |   #{item.model}
+        div
+          b Type:
+          |   #{item.type}
+        div
+          b Power:
+          |   #{item.power} #{item.power_measure}
+        div
+          b Payload:
+          |   #{item.payload}
+        div
+          b Gross weight:
+          |   #{item.gross_weight}
+      div(class="item-stock-wrapper-chip")
+        div(class="item-stock-chip") #{item.year}
+        div(class="item-stock-chip") #{item.mileage} #{item.mileage_measure}
+        div(class="item-stock-chip") #{item.axle_configuration}
