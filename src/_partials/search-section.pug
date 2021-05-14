@@ -1,0 +1,21 @@
+div(class="box options search-wrapper")
+  div(class="search-title")
+    b 26 Results Found
+    hr
+
+  +param('Param 1', 5)
+  +param('Param 2', 4)
+
+  div(class="search-container")
+    div(class="search-param")
+      b Param 3
+    div(class="flex-space-between")
+      input(class="input is-primary is-small search-input-2", type="text", placeholder="Min")
+      input(class="input is-primary is-small search-input-2", type="text", placeholder="Max")
+
+  div(class="search-container")
+    div(class="search-param")
+      b Param 4
+    input(class="input is-primary is-small", type="text", placeholder="Keyword")
+
+  button(class="button is-primary search-input-1") Search
