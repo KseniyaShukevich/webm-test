@@ -1,0 +1,16 @@
+div(class="block sort")
+  div(class="block flex-space-between", style="margin: 0px")
+    nav(class="pagination", role="navigation", aria-label="pagination")
+      ul(class="pagination-list")
+        li: a(class="pagination-previous" title="This is the first page" disabled) &lt;
+        li: a(class="pagination-link is-current" aria-label="Page 1" aria-current="page") 1
+        li: a(class="pagination-link", aria-label="Goto page 2") 2
+        li: a(class="pagination-next") &gt;
+    div(class="select is-primary")
+      select
+        option Sort options
+        option With options
+  each val in environment.stock
+    +item-stock(val)
+  each val in environment.page_text
+    p(class="page-text") #{val.content}
