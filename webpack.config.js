@@ -4,6 +4,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const environment = require('./data.json');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
@@ -61,6 +63,9 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       template: './index.pug',
+      templateParameters: {
+        environment,
+      },
       minify: {
         collapseWhitespace: isProd,
       },
@@ -68,6 +73,14 @@ module.exports = {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: filename('css'),
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/images'),
+          to: path.resolve(__dirname, 'dist'),
+        },
+      ],
     }),
   ],
   module: {

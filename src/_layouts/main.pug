@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name="keywords", content=`${environment.page_meta.meta_keywords}`)
+    meta(name="description", content=`${environment.page_meta.meta_description}`)
+    title #{environment.page_meta.title}
+  body
+    include ../_partials/header
+    div(class="container is-widescreen main-wrapper")
+      block content
+    include ../_partials/footer
+    div(class="info")
+      span(style="color: silver") © 2021 -
+        a  Privacy Policy
+        |  -
+        a  Terms and Conditions

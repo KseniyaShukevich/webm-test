@@ -1,11 +1,19 @@
-doctype html
-html
-  head
-  body
-    h1 My Site
-    p Welcome to my super lame site.
-    div(class="card")
-      footer(class="card-footer")
-        a(class="card-footer-item", href="#") Save
-        a(class="card-footer-item", href="#") Edit
-        a(class="card-footer-item", href="#") Delete
+extends _layouts/main
+
+block content
+  include ./components/mixins/item-stock
+  include ./components/mixins/param
+
+  div(class="section")
+    h1(class="title flex-center") #{environment.page_meta.h1}
+    nav(class="breadcrumb has-succeeds-separator", aria-label="breadcrumbs")
+      ul
+        each val, index in environment.breadcrumbs
+          if index === environment.breadcrumbs.length - 1
+            li(class="is-active"): a(href=`${val.href}, aria-current="page"`) #{val.text}
+          else
+            li: a(href=`${val.href}`) #{val.text}
+
+    div(class="block wrapper-content")
+      include ./_partials/search-section
+      include ./_partials/sort-section
