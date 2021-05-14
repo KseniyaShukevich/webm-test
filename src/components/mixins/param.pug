@@ -1,0 +1,9 @@
+mixin param(name, values)
+  div(class="param-container")
+    div(class="param-name")
+      b #{name}
+    - var n = 1;
+      while n < values
+        div
+          input(type="checkbox")
+          label(class="checkbox") value #{n++}
